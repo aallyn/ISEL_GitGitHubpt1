@@ -78,3 +78,12 @@ ggplot(data = trees, aes(x = Girth, y = Volume)) +
 
 # Add something short of your own! ----------------------------------------
 ## Do whatever you want, save it locally, stage, commit, push the changes. 
+## Simple multiple linear regression model for volume as a function of girth and height
+# Fit the model
+girth.height.mod<- lm(Volume ~ Girth + Height, data = trees)
+
+# Diagnostics
+plot(girth.height.mod)
+
+# Inferences and evaluation
+summary(girth.height.mod)
